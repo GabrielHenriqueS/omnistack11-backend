@@ -1,4 +1,4 @@
-import connection from '../database/connection';
+import connection from '../../database/connection';
 
 class IncidentController {
   async index(req, res) {
@@ -23,6 +23,7 @@ class IncidentController {
   }
 
   async store(req, res) {
+    console.log(req.body);
     const { title, description, value } = req.body;
     const ong_id = req.headers.authorization;
 

@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { errors } from 'celebrate';
 import routes from './routes';
 
 class App {
@@ -13,6 +14,7 @@ class App {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(routes);
+    this.app.use(errors());
   }
 }
 
